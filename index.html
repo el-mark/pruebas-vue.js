@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prueba</title>
+</head>
+<body>
+	
+	<div id="root">
+		
+		<input type="text" id="input" v-model="message">
+
+		<p>The value of the iput is: {{ message }}.</p>
+
+	</div>
+
+	<script src="https://unpkg.com/vue@2.2.6/dist/vue.js"></script>
+
+	<script>
+		
+		new Vue({
+
+			el: '#root',
+			
+
+			data: {
+
+				message: 'Este es el nuevo titulo'
+
+			}
+
+		});
+
+
+	</script>
+
+
+</body>
+</html>

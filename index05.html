@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prueba</title>
+	<style>
+		.color-blue {
+			color: blue;
+		}
+		.color-green {
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="root">
+		
+		<button :class="className" @click="toggleClass">Click Me</button>
+		<button :disabled="boolean" @click="toggleDisable">Click Me</button>
+
+	</div>
+	<div id="root2">
+		<task>Internet</task>
+		<task>Compu</task>
+		<task>Mouse</task>
+	</div>
+
+
+	<script src="https://unpkg.com/vue@2.2.6/dist/vue.js"></script>
+
+	<script>
+		
+		Vue.component('task', {
+
+			template: '<li><slot></slot></li>'
+
+		});
+
+
+		new Vue({
+			el:'#root2',
+		});
+
+		var app = new Vue({
+
+			el: '#root',
+			
+
+			data: {
+
+				className: 'color-blue',
+				boolean: false,
+				disabled: false
+
+
+			},
+
+			methods: {
+
+				toggleClass(){
+					if (this.className == 'color-green') {
+						this.className = 'color-blue';
+					} else {
+						this.className = 'color-green';
+					}
+					this.boolean = !this.boolean;
+
+				},
+
+				toggleDisable(){
+
+					this.boolean = !this.boolean;
+
+				}
+
+
+
+			}
+
+		});
+
+
+	</script>
+
+
+</body>
+</html>
