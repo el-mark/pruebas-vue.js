@@ -19,11 +19,11 @@ Vue.component('tabs',{
 		</div>
 	`,
 
-	data() {
+	// data() {
 
 
 
-	},
+	// },
 
 	created(){
 
@@ -42,7 +42,7 @@ Vue.component('tab',{
 
 	props: {
 
-		name: { required: true}
+		name: { required: true }
 
 	}
 
